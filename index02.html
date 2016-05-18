@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹出菜单</title>
+<link rel="stylesheet" type="text/css" href="CSS02.css">
+</head>
+<body>
+<div id="container">
+<input id="text" type="text" value="" />
+<input id="button" type="button" value="请选择您的省份" />
+<ul id="province">
+<li>广东省</li><li>湖北省</li><li>湖南省</li>
+<li>安徽省</li><li>江西省</li><li>江苏省</li>
+<li>河南省</li><li>浙江省</li><li>广东省</li>
+<li>北京市</li><li>重庆市</li><li>山东省</li>
+</ul>
+</div>
+<script>
+var btn=document.getElementById("button");
+var text=document.getElementById("text");
+var pro=document.getElementById("province");
+var province=pro.getElementsByTagName("li");
+btn.onclick=function(){
+	pro.style.display=pro.style.display=="block" ? "none" : "block";
+	}
+	
+	 for(var i=0;i<province.length-1;i++){
+	   province[i].onclick=function(){
+	 //  alert(this.innerHTML);
+	   text.value=this.innerHTML;
+	  }
+	}
+</script>
+</body>
+</html>
